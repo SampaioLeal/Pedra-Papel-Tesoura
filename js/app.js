@@ -20,9 +20,6 @@ $(document).ready(function () {
   $("#tesoura").attr('src', options[2]);
   $("#score").fadeIn('slow');
 
-  function getScore() {
-  }
-
   //Função que faz o jogo zerar
   function zerar() {
     if ($("#played").html() == "0") {
@@ -34,16 +31,15 @@ $(document).ready(function () {
       console.log("Pontuação zerada!");
       //Setar a imagem padrão
       $("#bot").attr('src', options[3]);
+      $('.score').html("0");
       return zerar;
     }
   }
 
   //Função que faz o jogo iniciar, a cada chamada é uma rodada a mais
   function jogar(choice) {
-    //Tranformar a string em uma int()
-    var num = parseInt($('#played').html(), 10);
-    //Contador de rodadas
-    $('#played').html(++num);
+    var playedTimes = parseInt($('#played').html(), 10);
+    $('#played').html(++playedTimes);
 
     //Gerar um número aleatório e setar a imagem
     var botChoice = String(Math.random() * 3).charAt(0);
@@ -52,14 +48,20 @@ $(document).ready(function () {
     //Regras básicas do Pedra, Papel e Tesoura
     if (choice == 0 && botChoice == 2 || choice == 1 && botChoice == 0 || choice == 2 && botChoice == 1) {
       $('#jogo').text("Você venceu!");
+      var vitorias = parseInt($('#vitorias').html(), 10);
+      $('#vitorias').html(++vitorias);
       console.log("Jogador venceu!");
     }
     if (botChoice == 0 && choice == 2 || botChoice == 1 && choice == 0 || botChoice == 2 && choice == 1) {
       $('#jogo').text("Bot Jubileu venceu!");
+      var derrotas = parseInt($('#derrotas').html(), 10);
+      $('#derrotas').html(++derrotas);
       console.log("Bot Jubileu venceu!");
     }
     if (choice == botChoice) {
       $('#jogo').text("Deu empate!");
+      var empates = parseInt($('#empates').html(), 10);
+      $('#empates').html(++empates);
       console.log("Empatou!");
     }
   }
