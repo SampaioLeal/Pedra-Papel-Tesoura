@@ -67,13 +67,13 @@ $(document).ready(function () {
     if (theme == 1) {
       console.log("theme 0 set");
       theme = 0;
-      $('#style').attr("href", "css/semantic.css");
+      $('#theme1').remove();
       $("#zerar").removeClass("inverted");
     }
     else if (theme == 0) {
       console.log("theme 1 set");
       theme = 1;
-      $('#style').attr("href", "css/semantic-dark.css");
+      $('head').append("<link id='theme1' rel='stylesheet' href='css/semantic-dark.css'>");
       $("#zerar").addClass("inverted");
     }
   }
