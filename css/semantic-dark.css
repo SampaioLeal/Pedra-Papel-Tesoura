@@ -1,3 +1,7 @@
 body {
   color: rgba(255, 255, 255, 0.98);
+  background: #3e4c54;
+}
+.ui.segment{
+  background: #5b6b73;
 }
