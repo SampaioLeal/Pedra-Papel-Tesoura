@@ -3,46 +3,66 @@
 <head>
     <title>Pedra Papel e Tesoura</title>
     <link id="style" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 </head>
 
 <body>
 
     <div id="content" class="ui conatiner">
         <center>
-            <br>
             <h1>Pedra, Papel e Tesoura</h1>
             <button id="theme" class="ui inverted blue button">Mudar Tema</button>
         </center>
-        <br><br><br><br>
-        <div class="ui two column centered stackable grid">
-            <div class="four wide column">
-                <center>
-                    <h1>Você</h1>
-                </center>
-                <div class="ui raised segment">
-                    <center>
-                        <br>
-                        <button id="btn1" class="ui green button">
-                            <img id="pedra" width="50px" height="50px">
-                        </button>
-                        <button id="btn2" class="ui green button">
-                            <img id="papel" width="50px" height="50px">
-                        </button><br>
-                        <button id="btn3" class="ui green button">
-                            <img id="tesoura" width="50px" height="50px">
-                        </button>
-                    </center>
+        <br>
+        <div class="ui four column stackable centered grid">
+            <div id="score" style="display: none;" class="row">
+                <div class="center aligned column">
+                    <div class="ui raised segment">
+                        <h1>Vitórias:</h1>
+                    </div>
+                </div>
+                <div class="center aligned column">
+                    <div class="ui raised segment">
+                        <h1>Empates:</h1>
+                    </div>
+                </div>
+                <div class="center aligned column">
+                    <div class="ui raised segment">
+                        <h1>Derrotas:</h1>
+                    </div>
                 </div>
             </div>
-            <div class="four wide column">
-                <center>
-                    <h1>Máquina</h2>
-                </center>
-                <div class="ui raised segment">
+            <div class="row">
+                <div class="four wide column">
                     <center>
-                        <img id="bot" width="100px" height="100px"><br>
+                        <h1>Você</h1>
                     </center>
+                    <div class="ui raised segment">
+                        <center>
+                            <br>
+                            <button id="btn1" class="ui green button">
+                            <img id="pedra" width="50px" height="50px">
+                        </button>
+                            <button id="btn2" class="ui green button">
+                            <img id="papel" width="50px" height="50px">
+                        </button><br>
+                            <button id="btn3" class="ui green button">
+                            <img id="tesoura" width="50px" height="50px">
+                        </button>
+                        </center>
+                    </div>
+                </div>
+                <div class="four wide column">
+                    <center>
+                        <h1>Máquina</h1>
+                    </center>
+                    <div class="ui raised segment">
+                        <center>
+                            <img id="bot" width="100px" height="100px"><br>
+                        </center>
+                    </div>
                 </div>
             </div>
         </div>
@@ -56,7 +76,6 @@
                 <a class="ui basic blue left pointing label"><span id="played">0</span></a>
             </div>
             <h1 id="jogo"></h1>
-            <div id="score"></div>
             <button id="zerar" class="ui button">
                     Zerar
                   </button>

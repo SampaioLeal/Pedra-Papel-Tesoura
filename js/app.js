@@ -18,6 +18,7 @@ $(document).ready(function () {
   $("#pedra").attr('src', options[0]);
   $("#papel").attr('src', options[1]);
   $("#tesoura").attr('src', options[2]);
+  $("#score").fadeIn('slow');
 
   function getScore() {
   }
