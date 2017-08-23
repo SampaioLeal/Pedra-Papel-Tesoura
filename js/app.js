@@ -66,13 +66,13 @@ $(document).ready(function () {
     if (theme == 1) {
       console.log("theme 0 set");
       theme = 0;
-      $('#style').attr("href", "semantic.css");
+      $('#style').attr("href", "css/semantic.css");
       $("#zerar").removeClass("inverted");
     }
     else if (theme == 0) {
       console.log("theme 1 set");
       theme = 1;
-      $('#style').attr("href", "semantic-dark.css");
+      $('#style').attr("href", "css/semantic-dark.css");
       $("#zerar").addClass("inverted");
     }
   }

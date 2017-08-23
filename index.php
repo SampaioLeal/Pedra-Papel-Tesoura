@@ -2,7 +2,7 @@
 
 <head>
     <title>Pedra Papel e Tesoura</title>
-    <link id="style" rel="stylesheet" href="semantic.css">
+    <link id="style" rel="stylesheet" href="css/semantic.css">
 </head>
 
 <body>
@@ -52,9 +52,9 @@
                   </button>
         </center>
     </div>
-    <script src="jquery.min.js"></script>
-    <script src="semantic.js"></script>
-    <script src="app.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/semantic.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
