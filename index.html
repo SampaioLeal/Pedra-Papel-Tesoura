@@ -3,25 +3,35 @@
 <head>
     <title>Pedra Papel e Tesoura</title>
     <link id="style" rel="stylesheet" href="css/semantic.css">
+    <meta charset="utf-8">
 </head>
 
 <body>
 
     <div id="content" class="ui conatiner">
         <center>
-        <br>
+            <br>
             <h1>Pedra, Papel e Tesoura</h1>
             <button id="theme" class="ui inverted blue button">Mudar Tema</button>
         </center>
         <br><br><br><br>
-        <div class="ui two column centered grid">
+        <div class="ui two column centered stackable grid">
             <div class="four wide column">
                 <center>
                     <h1>Você</h1>
                 </center>
                 <div class="ui raised segment">
                     <center>
-                        <img id="img1" width="100px" height="100px"><br>
+                        <br>
+                        <button id="btn1" class="ui green button">
+                            <img id="pedra" width="50px" height="50px">
+                        </button>
+                        <button id="btn2" class="ui green button">
+                            <img id="papel" width="50px" height="50px">
+                        </button><br>
+                        <button id="btn3" class="ui green button">
+                            <img id="tesoura" width="50px" height="50px">
+                        </button>
                     </center>
                 </div>
             </div>
@@ -31,7 +41,7 @@
                 </center>
                 <div class="ui raised segment">
                     <center>
-                        <img id="img2" width="100px" height="100px"><br>
+                        <img id="bot" width="100px" height="100px"><br>
                     </center>
                 </div>
             </div>
@@ -41,7 +51,7 @@
         <center>
             <div id="play" class="ui labeled button" tabindex="0">
                 <div class="ui blue button">
-                    Jogar!
+                    Rodada:
                 </div>
                 <a class="ui basic blue left pointing label"><span id="played">0</span></a>
             </div>

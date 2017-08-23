@@ -14,7 +14,10 @@ $(document).ready(function () {
   var theme = 0;
 
   //Setando a imagem inicial
-  $("img").attr('src', options[3]);
+  $("#bot").attr('src', options[3]);
+  $("#pedra").attr('src', options[0]);
+  $("#papel").attr('src', options[1]);
+  $("#tesoura").attr('src', options[2]);
 
   function getScore() {
   }
@@ -29,34 +32,32 @@ $(document).ready(function () {
       $("#jogo").html("");
       console.log("Pontuação zerada!");
       //Setar a imagem padrão
-      $("img").attr('src', options[3]);
+      $("#bot").attr('src', options[3]);
       return zerar;
     }
   }
 
   //Função que faz o jogo iniciar, a cada chamada é uma rodada a mais
-  function jogar() {
+  function jogar(choice) {
     //Tranformar a string em uma int()
     var num = parseInt($('#played').html(), 10);
     //Contador de rodadas
     $('#played').html(++num);
 
     //Gerar um número aleatório e setar a imagem
-    var num1 = String(Math.random() * 3).charAt(0);
-    var num2 = String(Math.random() * 3).charAt(0);
-    $("#img1").attr('src', options[num1]);
-    $("#img2").attr('src', options[num2]);
+    var botChoice = String(Math.random() * 3).charAt(0);
+    $("#bot").attr('src', options[botChoice]);
 
     //Regras básicas do Pedra, Papel e Tesoura
-    if (num1 == 0 && num2 == 2 || num1 == 1 && num2 == 0 || num1 == 2 && num2 == 1) {
+    if (choice == 0 && botChoice == 2 || choice == 1 && botChoice == 0 || choice == 2 && botChoice == 1) {
       $('#jogo').text("Você venceu!");
       console.log("Jogador venceu!");
     }
-    if (num2 == 0 && num1 == 2 || num2 == 1 && num1 == 0 || num2 == 2 && num1 == 1) {
+    if (botChoice == 0 && choice == 2 || botChoice == 1 && choice == 0 || botChoice == 2 && choice == 1) {
       $('#jogo').text("Bot Jubileu venceu!");
       console.log("Bot Jubileu venceu!");
     }
-    if (num1 == num2) {
+    if (choice == botChoice) {
       $('#jogo').text("Deu empate!");
       console.log("Empatou!");
     }
@@ -78,21 +79,27 @@ $(document).ready(function () {
   }
 
   //Eventos
-  $("#play").click(function () {
-    jogar();
+  $("#btn1").click(function () {
+    jogar(0);
+  });
+  $("#btn2").click(function () {
+    jogar(1);
+  });
+  $("#btn3").click(function () {
+    jogar(2);
   });
   $("#zerar").click(function () {
     if (zerar() == null) {
     }
     else {
       $('#content').fadeOut();
-      setTimeout(zerar, 500);
+      setTimeout(zerar, 1000);
       $('#content').fadeIn(2000);
     }
   })
   $("#theme").click(function () {
     $('#content').fadeOut();
-    setTimeout(changeTheme, 500);
+    setTimeout(changeTheme, 1000);
     $('#content').fadeIn(2000);
   })
   console.log("Jogo iniciado!");
