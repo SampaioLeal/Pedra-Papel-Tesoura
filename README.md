@@ -1,5 +1,5 @@
 # Pedra-Papel-Tesoura
-Jogo pedra-papel-tesoura feito com HTML e JavaScript por Sampaio Leal
+Jogo pedra-papel-tesoura feito com HTML e JavaScript por [Sampaio Leal](http://fb.com/sampaio.leal.79)
 
 
 # A origem:
