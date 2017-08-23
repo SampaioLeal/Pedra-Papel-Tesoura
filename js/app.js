@@ -96,14 +96,14 @@ $(document).ready(function () {
     }
     else {
       $('#content').fadeOut();
-      setTimeout(zerar, 1000);
+      setTimeout(zerar, 10000);
       $('#content').fadeIn(2000);
     }
   })
   $("#theme").click(function () {
     $('#content').fadeOut();
-    setTimeout(changeTheme, 1000);
-    $('#content').fadeIn(2000);
+    setTimeout(changeTheme, 500);
+    $('#content').fadeIn(3000);
   })
   console.log("Jogo iniciado!");
 
