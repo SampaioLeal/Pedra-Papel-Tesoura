@@ -11,3 +11,4 @@ if ($login->isUserLoggedIn() == true) {
 } else {
     include("views/not_logged_in.php");
 }
+ 
