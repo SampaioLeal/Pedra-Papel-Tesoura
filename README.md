@@ -24,3 +24,5 @@ Caso dois jogadores façam o mesmo gesto, ocorre um empate, e geralmente se joga
 Para instalar o jogo em um servidor, ou em uma máquina local basta clonar ou baixar o repositório, e rebolar tudo em uma pasta! 
 
 Você pode editar as imagens, e alguns textos.
+
+O código fonte você encontra na pasta ` /src `
