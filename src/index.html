@@ -13,10 +13,60 @@
         <center>
             <h1>Pedra, Papel e Tesoura</h1>
             <button id="theme" class="ui inverted blue button">Mudar Tema</button>
-            <button id="mode" class="ui inverted red button">Multiplayer</button>
         </center>
     </div>
     <div id="interface" class="ui conatiner">
+        <br>
+        <div class="ui eight column stackable centered grid">
+            <div id="score" style="display: none;" class="row">
+                <div class="center aligned column">
+                    <div class="ui raised segment">
+                        <h1><i class="birthday icon"></i> <span class="score" id="vitorias">0</span></h1>
+                    </div>
+                </div>
+                <div class="center aligned column">
+                    <div class="ui raised segment">
+                        <h1><i class="anchor icon"></i> <span class="score" id="empates">0</span></h1>
+                    </div>
+                </div>
+                <div class="center aligned column">
+                    <div class="ui raised segment">
+                        <h1><i class="trash icon"></i> <span class="score" id="derrotas">0</span></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="four wide column">
+                    <center>
+                        <h1><i class="user icon"></i> Você</h1>
+                    </center>
+                    <div class="ui raised segment">
+                        <center>
+                            <br>
+                            <button id="btn1" class="ui green button">
+                                <img id="pedra" width="50px" height="50px">
+                            </button>
+                            <button id="btn2" class="ui green button">
+                                <img id="papel" width="50px" height="50px">
+                            </button><br>
+                            <button id="btn3" class="ui green button">
+                                <img id="tesoura" width="50px" height="50px">
+                            </button>
+                        </center>
+                    </div>
+                </div>
+                <div class="four wide column">
+                    <center>
+                        <h1>Máquina</h1>
+                    </center>
+                    <div class="ui raised segment">
+                        <center>
+                            <img id="bot" width="100px" height="100px"><br>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
     <div class="container">
