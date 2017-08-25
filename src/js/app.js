@@ -14,13 +14,22 @@ $(document).ready(function () {
   function interface(num) {
     if (num == 1) {
       $('#interface').load('views/singleplayer.html');
-      setTimeout(function() {
+      setTimeout(function () {
         $("#bot").attr('src', options[3]);
         $("#pedra").attr('src', options[0]);
         $("#papel").attr('src', options[1]);
         $("#tesoura").attr('src', options[2]);
         $("#score").fadeIn('slow');
-      },50);
+        $("#btn1").click(function () {
+          jogar(0);
+        });
+        $("#btn2").click(function () {
+          jogar(1);
+        });
+        $("#btn3").click(function () {
+          jogar(2);
+        });
+      }, 50);
     }
     else if (num == 2) {
       $('#interface').load('views/multiplayer.html');
@@ -95,15 +104,6 @@ $(document).ready(function () {
     }
   }
   //Eventos
-  $("#btn1").click(function () {
-    jogar(0, mode);
-  });
-  $("#btn2").click(function () {
-    jogar(1, mode);
-  });
-  $("#btn3").click(function () {
-    jogar(2, mode);
-  });
   $("#zerar").click(function () {
     if (zerar() == null) {
     }
@@ -113,5 +113,13 @@ $(document).ready(function () {
   })
   $("#theme").click(function () {
     setTimeout(changeTheme, 1000);
+  })
+  $('#mode').click(function () {
+    if (mode == "singleplayer") {
+      mode = "multiplayer";
+    }
+    else if (mode == "multiplayer") {
+      mode = "singleplayer";
+    }
   })
 });
