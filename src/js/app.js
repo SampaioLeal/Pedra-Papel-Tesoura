@@ -1,44 +1,47 @@
 $(document).ready(function () {
 
   console.log("Iniciando Pedra, Papel e Tesoura! Por: Sampaio Leal");
+
   //Iniciando configurações da aplicação!
-  var theme = 0;
-  var mode = "multiplayer";
-  var options = [
+  var tema = 0;
+  var imagens = [
     "img/pedra.png",
     "img/papel.png",
     "img/tesoura.png",
     "img/proibido.png"
   ];
-  $("#bot").attr('src', options[3]);
-  $("#pedra").attr('src', options[0]);
-  $("#papel").attr('src', options[1]);
-  $("#tesoura").attr('src', options[2]);
+
+  //Setando as imagens
+  $("#bot").attr('src', imagens[3]);
+  $("#pedra").attr('src', imagens[0]);
+  $("#papel").attr('src', imagens[1]);
+  $("#tesoura").attr('src', imagens[2]);
   $("#score").fadeIn('slow');
+
   console.log("Jogo iniciado!");
 
-  function jogar(choice) {
-    var playedTimes = parseInt($('#played').html(), 10);
-    $('#played').html(++playedTimes);
+  function jogar(escolhaUsuario) {
+    var vezesJogadas = parseInt($('#played').html(), 10);
+    $('#played').html(++vezesJogadas);
 
     //Gerar um número aleatório e setar a imagem
-    var botChoice = String(Math.random() * 3).charAt(0);
-    $("#bot").attr('src', options[botChoice]);
+    var escolhaMaquina = String(Math.random() * 3).charAt(0);
+    $("#bot").attr('src', imagens[escolhaMaquina]);
 
     //Regras básicas do Pedra, Papel e Tesoura
-    if (choice == 0 && botChoice == 2 || choice == 1 && botChoice == 0 || choice == 2 && botChoice == 1) {
+    if (escolhaUsuario == 0 && escolhaMaquina == 2 || escolhaUsuario == 1 && escolhaMaquina == 0 || escolhaUsuario == 2 && escolhaMaquina == 1) {
       $('#jogo').text("Você venceu!");
       var vitorias = parseInt($('#vitorias').html(), 10);
       $('#vitorias').html(++vitorias);
       console.log("Jogador venceu!");
     }
-    if (botChoice == 0 && choice == 2 || botChoice == 1 && choice == 0 || botChoice == 2 && choice == 1) {
+    if (escolhaMaquina == 0 && escolhaUsuario == 2 || escolhaMaquina == 1 && escolhaUsuario == 0 || escolhaMaquina == 2 && escolhaUsuario == 1) {
       $('#jogo').text("Bot Jubileu venceu!");
       var derrotas = parseInt($('#derrotas').html(), 10);
       $('#derrotas').html(++derrotas);
       console.log("Bot Jubileu venceu!");
     }
-    if (choice == botChoice) {
+    if (escolhaUsuario == escolhaMaquina) {
       $('#jogo').text("Deu empate!");
       var empates = parseInt($('#empates').html(), 10);
       $('#empates').html(++empates);
@@ -55,23 +58,23 @@ $(document).ready(function () {
       $("#jogo").html("");
       console.log("Pontuação zerada!");
       //Setar a imagem padrão
-      $("#bot").attr('src', options[3]);
+      $("#bot").attr('src', imagens[3]);
       $('.score').html("0");
       return zerar;
     }
   }
 
-  function changeTheme() {
-    if (theme == 1) {
-      console.log("theme 0 set");
-      theme = 0;
-      $('#theme1').remove();
+  function mudarTema() {
+    if (tema == 1) {
+      console.log("tema 0 set");
+      tema = 0;
+      $('#tema1').remove();
       $("#zerar").removeClass("inverted");
     }
-    else if (theme == 0) {
-      console.log("theme 1 set");
-      theme = 1;
-      $('head').append("<link id='theme1' rel='stylesheet' href='css/semantic-dark.css'>");
+    else if (tema == 0) {
+      console.log("tema 1 set");
+      tema = 1;
+      $('head').append("<link id='tema1' rel='stylesheet' href='css/semantic-dark.css'>");
       $("#zerar").addClass("inverted");
     }
   }
@@ -92,7 +95,7 @@ $(document).ready(function () {
       setTimeout(zerar, 1000);
     }
   });
-  $("#theme").click(function () {
-    setTimeout(changeTheme, 1000);
+  $("#tema").click(function () {
+    setTimeout(mudarTema, 1000);
   });
 });
