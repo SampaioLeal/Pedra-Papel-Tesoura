@@ -11,91 +11,75 @@ var imagens = [
 ];
 
 //Setando as imagens
-$("#bot").attr('src', imagens[3]);
-$("#pedra").attr('src', imagens[0]);
-$("#papel").attr('src', imagens[1]);
-$("#tesoura").attr('src', imagens[2]);
-$("#score").fadeIn('slow');
+document.querySelector("#pedra").setAttribute('src', imagens[0]);
+document.querySelector("#papel").setAttribute('src', imagens[1]);
+document.querySelector("#tesoura").setAttribute('src', imagens[2]);
+document.querySelector("#bot").setAttribute('src', imagens[3]);
 
 console.log("Jogo carregado!");
 
 function jogar(usrCh) {
   //Mostra a rodada atual
-  var vezesJogadas = parseInt($('#played').html(), 10);
-  $('#played').html(++vezesJogadas);
+  var vezesJogadas = parseInt(document.querySelector("#played").innerHTML, 10);
+  document.querySelector("#played").innerHTML = ++vezesJogadas;
 
   //Gerar um número aleatório e seta a imagem
   var botCh = String(Math.random() * 3).charAt(0);
-  $("#bot").attr('src', imagens[botCh]);
+  document.querySelector("#bot").setAttribute('src', imagens[botCh]);
 
   //Regras básicas do Pedra, Papel e Tesoura
   if (usrCh == 0 && botCh == 2 || usrCh == 1 && botCh == 0 || usrCh == 2 && botCh == 1) {
-    $('#jogo').text("Você venceu!");
-    var vitorias = parseInt($('#vitorias').html(), 10);
-    $('#vitorias').html(++vitorias);
+    document.querySelector("#jogo").innerHTML = "Você venceu!";
+    var vitorias = parseInt(document.querySelector("#vitorias").innerHTML, 10);
+    document.querySelector("#vitorias").innerHTML = ++vitorias;
     console.log("Jogador venceu!");
   }
   if (botCh == 0 && usrCh == 2 || botCh == 1 && usrCh == 0 || botCh == 2 && usrCh == 1) {
-    $('#jogo').text("Bot Jubileu venceu!");
-    var derrotas = parseInt($('#derrotas').html(), 10);
-    $('#derrotas').html(++derrotas);
+    document.querySelector("#jogo").innerHTML = "Bot Jubileu venceu!";
+    var derrotas = parseInt(document.querySelector("#derrotas").innerHTML, 10);
+    document.querySelector("#derrotas").innerHTML = ++derrotas;
     console.log("Bot Jubileu venceu!");
   }
   if (usrCh == botCh) {
-    $('#jogo').text("Deu empate!");
-    var empates = parseInt($('#empates').html(), 10);
-    $('#empates').html(++empates);
+    document.querySelector("#jogo").innerHTML = "Deu empate!";
+    var empates = parseInt(document.querySelector("#empates").innerHTML, 10);
+    document.querySelector("#empates").innerHTML = ++empates;
     console.log("Empatou!");
   }
 }
 //Função que faz o jogo zerar
 function zerar() {
-  if ($("#played").html() == "0") {
+  if (document.querySelector("#played").innerHTML == "1") {
     return null;
   }
   else {
-    $("#played").html(0);
-    $("#jogo").html("");
+    document.querySelector("#played").innerHTML = 1;
+    document.querySelector("#jogo").innerHTML = "";
     console.log("Pontuação zerada!");
     //Setar a imagem padrão
-    $("#bot").attr('src', imagens[3]);
-    $('.score').html("0");
-    return zerar;
+    document.querySelector("#bot").setAttribute('src', imagens[3]);
+    var score = document.querySelectorAll(".score");
+    for(i = 0; i < 3; i++) {
+      score[i].innerHTML = "0";
+    }
   }
 }
 
-function mudarTema() {
-  if (tema == 1) {
-    console.log("tema 0 set");
-    tema = 0;
-    $('#tema1').remove();
-    $("#zerar").removeClass("inverted");
-  }
-  else if (tema == 0) {
-    console.log("tema 1 set");
-    tema = 1;
-    $('head').append("<link id='tema1' rel='stylesheet' href='css/semantic-dark.css'>");
-    $("#zerar").addClass("inverted");
-  }
-}
 
 //Eventos
-$("#btn1").click(function () {
+document.querySelector("#btn1").onclick = function () {
   jogar(0);
-});
-$("#btn2").click(function () {
+};
+document.querySelector("#btn2").onclick = function () {
   jogar(1);
-});
-$("#btn3").click(function () {
+};
+document.querySelector("#btn3").onclick = function () {
   jogar(2);
-});
-$("#zerar").click(function () {
+};
+document.querySelector("#zerar").onclick = function () {
   if (zerar() == null) {
   }
   else {
     setTimeout(zerar, 1000);
   }
-});
-$("#tema").click(function () {
-  setTimeout(mudarTema, 1000);
-});
+};
