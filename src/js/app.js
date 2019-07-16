@@ -46,18 +46,13 @@ function jogar(usrCh) {
 }
 //Função que faz o jogo zerar
 function zerar() {
-  if (document.querySelector("#played").innerHTML == "1") {
-    return null;
-  }
-  else {
-    document.querySelector("#played").innerHTML = 1;
-    console.log("Pontuação zerada!");
-    //Setar a imagem padrão
-    document.querySelector("#bot").setAttribute('src', imagens[3]);
-    var score = document.querySelectorAll(".score");
-    for (i = 0; i < 3; i++) {
-      score[i].innerHTML = "0";
-    }
+  document.querySelector("#played").innerHTML = 1;
+  console.log("| --> Pontuação zerada!");
+  //Setar a imagem padrão
+  document.querySelector("#bot").setAttribute('src', imagens[3]);
+  var score = document.querySelectorAll(".score");
+  for (i = 0; i < 3; i++) {
+    score[i].innerHTML = "0";
   }
 }
 
@@ -73,9 +68,5 @@ document.querySelector("#btn3").onclick = function () {
   jogar(2);
 };
 document.querySelector("#zerar").onclick = function () {
-  if (zerar() == null) {
-  }
-  else {
-    setTimeout(zerar, 1000);
-  }
+  zerar();
 };
