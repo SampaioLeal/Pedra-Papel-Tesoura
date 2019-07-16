@@ -1,5 +1,5 @@
 //Initializing...
-console.log("Iniciando Pedra, Papel e Tesoura! Por: Sampaio Leal");
+console.log("| --> Iniciando Pedra, Papel e Tesoura! Por: Sampaio Leal |");
 
 //Iniciando configurações da aplicação!
 var tema = 0;
@@ -16,35 +16,32 @@ document.querySelector("#papel").setAttribute('src', imagens[1]);
 document.querySelector("#tesoura").setAttribute('src', imagens[2]);
 document.querySelector("#bot").setAttribute('src', imagens[3]);
 
-console.log("Jogo carregado!");
+console.log("| --> Jogo carregado!                                     |");
+console.log("|---------------------------------------------------------|");
 
 function jogar(usrCh) {
-  //Mostra a rodada atual
+  //Variáveis
   var vezesJogadas = parseInt(document.querySelector("#played").innerHTML, 10);
-  document.querySelector("#played").innerHTML = ++vezesJogadas;
-
-  //Gerar um número aleatório e seta a imagem
   var botCh = String(Math.random() * 3).charAt(0);
+  var vitorias = parseInt(document.querySelector("#vitorias").innerHTML, 10);
+  var derrotas = parseInt(document.querySelector("#derrotas").innerHTML, 10);
+  var empates = parseInt(document.querySelector("#empates").innerHTML, 10);
+
+  document.querySelector("#played").innerHTML = ++vezesJogadas;
   document.querySelector("#bot").setAttribute('src', imagens[botCh]);
 
   //Regras básicas do Pedra, Papel e Tesoura
   if (usrCh == 0 && botCh == 2 || usrCh == 1 && botCh == 0 || usrCh == 2 && botCh == 1) {
-    document.querySelector("#jogo").innerHTML = "Você venceu!";
-    var vitorias = parseInt(document.querySelector("#vitorias").innerHTML, 10);
     document.querySelector("#vitorias").innerHTML = ++vitorias;
-    console.log("Jogador venceu!");
+    console.log("| --> Jogador venceu! (User", vitorias, "-", derrotas, "Bot)");
   }
   if (botCh == 0 && usrCh == 2 || botCh == 1 && usrCh == 0 || botCh == 2 && usrCh == 1) {
-    document.querySelector("#jogo").innerHTML = "Bot Jubileu venceu!";
-    var derrotas = parseInt(document.querySelector("#derrotas").innerHTML, 10);
     document.querySelector("#derrotas").innerHTML = ++derrotas;
-    console.log("Bot Jubileu venceu!");
+    console.log("| --> Bot Jubileu venceu! (User", vitorias, "-", derrotas, "Bot)");
   }
   if (usrCh == botCh) {
-    document.querySelector("#jogo").innerHTML = "Deu empate!";
-    var empates = parseInt(document.querySelector("#empates").innerHTML, 10);
     document.querySelector("#empates").innerHTML = ++empates;
-    console.log("Empatou!");
+    console.log("| --> Empatou!");
   }
 }
 //Função que faz o jogo zerar
@@ -54,12 +51,11 @@ function zerar() {
   }
   else {
     document.querySelector("#played").innerHTML = 1;
-    document.querySelector("#jogo").innerHTML = "";
     console.log("Pontuação zerada!");
     //Setar a imagem padrão
     document.querySelector("#bot").setAttribute('src', imagens[3]);
     var score = document.querySelectorAll(".score");
-    for(i = 0; i < 3; i++) {
+    for (i = 0; i < 3; i++) {
       score[i].innerHTML = "0";
     }
   }
