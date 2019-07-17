@@ -44,18 +44,18 @@ function jogar(usrCh) {
     console.log("| --> Empatou!");
   }
 }
+
 //Função que faz o jogo zerar
 function zerar() {
   document.querySelector("#played").innerHTML = 1;
   console.log("| --> Pontuação zerada!");
-  //Setar a imagem padrão
   document.querySelector("#bot").setAttribute('src', imagens[3]);
+  
   var score = document.querySelectorAll(".score");
   for (i = 0; i < 3; i++) {
     score[i].innerHTML = "0";
   }
 }
-
 
 //Eventos
 document.querySelector("#btn1").onclick = function () {
