@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Pedra-Papel-Tesoura/static/css/main.95e49776.chunk.css",
+    "main.js": "/Pedra-Papel-Tesoura/static/js/main.abd3a490.chunk.js",
+    "main.js.map": "/Pedra-Papel-Tesoura/static/js/main.abd3a490.chunk.js.map",
+    "runtime-main.js": "/Pedra-Papel-Tesoura/static/js/runtime-main.4899b58a.js",
+    "runtime-main.js.map": "/Pedra-Papel-Tesoura/static/js/runtime-main.4899b58a.js.map",
+    "static/js/2.a9a14803.chunk.js": "/Pedra-Papel-Tesoura/static/js/2.a9a14803.chunk.js",
+    "static/js/2.a9a14803.chunk.js.map": "/Pedra-Papel-Tesoura/static/js/2.a9a14803.chunk.js.map",
+    "index.html": "/Pedra-Papel-Tesoura/index.html",
+    "precache-manifest.63af4f42e73fc52d5f97648b5163666e.js": "/Pedra-Papel-Tesoura/precache-manifest.63af4f42e73fc52d5f97648b5163666e.js",
+    "service-worker.js": "/Pedra-Papel-Tesoura/service-worker.js",
+    "static/css/main.95e49776.chunk.css.map": "/Pedra-Papel-Tesoura/static/css/main.95e49776.chunk.css.map",
+    "static/js/2.a9a14803.chunk.js.LICENSE.txt": "/Pedra-Papel-Tesoura/static/js/2.a9a14803.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4899b58a.js",
+    "static/js/2.a9a14803.chunk.js",
+    "static/css/main.95e49776.chunk.css",
+    "static/js/main.abd3a490.chunk.js"
+  ]
+}
